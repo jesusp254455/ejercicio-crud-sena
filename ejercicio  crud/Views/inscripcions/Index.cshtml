@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ejercicio__crud.Models.inscripcion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.codigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nro_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.periodo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nro_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.periodo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Nro_inscripcion">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Nro_inscripcion">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Nro_inscripcion">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
